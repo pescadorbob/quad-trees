@@ -1,0 +1,14 @@
+{
+  "name": "quad-trees",
+  "version": "1.0.0",
+  "description": "understanding quadtrees",
+  "main": "quadtree.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "quadTree"
+  ],
+  "author": "Brent Fisher",
+  "license": "ISC"
+}
