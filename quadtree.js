@@ -72,6 +72,21 @@ class QuadTree {
       else console.log("Error: p is not within any boundary");
     }
   }
+  query(range){
+    let found = [];
+    if(!this.isDivided){
+      found = found.concat(this.points);
+    } else {
+      let sections = [this.nw,this.ne,this.se,this.sw];
+      sections.forEach(quad => {
+        let points = quad.query(range);
+        points.forEach(p=>{
+          found.push(p);
+        })
+      });
+    }
+    return found;
+  }
 
 
 }

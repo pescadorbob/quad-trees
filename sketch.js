@@ -5,21 +5,39 @@ function setup() {
   let boundary = new Rectangle(200,200,200,200)
   qt = new QuadTree(boundary,4);
   
-
-  for(let i=0;i<500;i++){
-    let p = new Point(random(boundary.w*2),random(boundary.h*2));
+  for (let i = 0; i < 30; i++) {
+    let x = randomGaussian(width / 2, width / 8);
+    let y = randomGaussian(height / 2, height / 8);
+    let p = new Point(x, y);
     qt.insert(p);
   }
   
   
-} 
+}
+let range = new Rectangle(250,280,120,75);
 function draw(){
-  if(mouseIsPressed){
-    let m = new Point(mouseX,mouseY);
-    qt.insert(m);
-  }
   background(0);
   show(qt);
+  if(mouseIsPressed){
+    range = new Rectangle(mouseX,mouseY,120,75);
+  }
+  drawRange(range);
+  highlightPoints(range);
+}
+function highlightPoints(range){
+  let points = qt.query(range);
+  for(let p of points){
+    strokeWeight(3);
+    stroke(255,0,0);
+    point(p.x,p.y);
+  }
+
+}
+function drawRange(r){
+  stroke(0,255,0);
+  strokeWeight(3);
+  rectMode(CENTER);
+  rect(r.x,r.y,r.w,r.h);
 }
 function show(qt){
   stroke(255);
