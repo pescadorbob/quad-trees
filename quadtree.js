@@ -29,6 +29,12 @@ class Rectangle {
     )
 
   }
+  contains(point){
+    return (
+      this.left <= point.x && point.x <= this.right &&
+      this.top <= point.y && point.y <= this.bottom
+    );
+  }
 }
 let DEFAULT_CAPACITY = 4;
 class QuadTree {

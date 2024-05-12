@@ -31,10 +31,12 @@ function highlightSearchPoints(range){
   for(let tree of trees){
     if(!tree.isDivided){
       for(let p of tree.points){
-        stroke(255,0,0);
-        strokeWeight(3);
+        if(range.contains(p)){
+          stroke(255,0,0);
+          strokeWeight(3);
 
-        point(p.x,p.y);
+          point(p.x,p.y);
+        }
       }
     }
   }
@@ -45,7 +47,7 @@ function highlightIntersections(range){
   for(let tree of rectangles){
     let r = tree.boundary;
     strokeWeight(6);
-    stroke(255,0,255);
+    stroke(150,150,0);
     rectMode(CENTER);
     noFill();
     // the train guy used width and height that are half. 
