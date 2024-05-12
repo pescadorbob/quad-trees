@@ -5,7 +5,7 @@
   "main": "quadtree.js",
   "scripts": {
     "test": "mocha",
-    "build": "esbuild quadtree.js sketch.js --bundle --minify --outdir=dist",
+    "build": "esbuild quadtree.js sketch.js --bundle --minify --outdir=dist && cp index.html dist/index.html",
     "test-watch": "mocha --watch"
   },
   "keywords": [
