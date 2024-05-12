@@ -1,6 +1,7 @@
 let qt;
 function setup() {
-  createCanvas(400,400);
+  const myCanvas = createCanvas(400,400);
+  myCanvas.parent('myCanvas'); // Specify the container ID
 
   let boundary = new Rectangle(200,200,200,200)
   qt = new QuadTree(boundary,4);
