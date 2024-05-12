@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>QuadTree</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
 	<script src="quadtree.js"></script>
 	<script src="sketch.js"></script>
 </head>
+
 <body>
-	<h1>Welcome to Brent's quad tree experiment</h1>
-	<div>In this coding challenge, I implement a Quadtree data structure in JavaScript and visualize it with p5.js.</div>
-	<div>Checkout the code <a href="https://github.com/pescadorbob/quad-trees">here</a></div>
+	<div id="myCanvas"></div>
+	<div id="myContainer"></div>
+	<script>var converter = new showdown.Converter();
+		// Fetch the README.md content 
+		const readmeUrl = 'readme.md';
+
+		fetch(readmeUrl)
+			.then(response => response.text())
+			.then(markdownContent => {
+				// Convert the Markdown content to HTML using Showdown
+				const converter = new showdown.Converter();
+				const htmlContent = converter.makeHtml(markdownContent);
+
+				// Now you can use the HTML content (e.g., append it to a container)
+				document.getElementById('myContainer').innerHTML = htmlContent;
+			})
+			.catch(error => {
+				console.error('Error fetching readme.md:', error);
+			});
+
+
+		
+
+	</script>
 </body>
+
 </html>

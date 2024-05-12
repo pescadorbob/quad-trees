@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById Example</title>
+</head>
+<body>
+    <div id="myDiv">Hello, World!</div>
+
+    <script>
+        // Correct usage
+        const myElement = document.getElementById('myDiv');
+        if (myElement) {
+            console.log('Element found:', myElement.textContent);
+        } else {
+            console.log('Element not found.');
+        }
+    </script>
+</body>
+</html>
