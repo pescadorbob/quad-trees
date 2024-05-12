@@ -5,7 +5,7 @@
   "main": "quadtree.js",
   "scripts": {
     "test": "mocha",
-    "build": "mkdir dist && cp index.html dist/index.html && cp ./*.js dist",
+    "build": "mkdir dist && cp index.html dist/index.html && cp ./*.js dist && cp ./readme.md dist",
     "test-watch": "mocha --watch"
   },
   "keywords": [
