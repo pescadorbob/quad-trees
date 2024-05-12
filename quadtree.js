@@ -11,10 +11,23 @@ class Point {
 
 class Rectangle {
   constructor(x, y, w, h) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
+    this.x = x; // the middle of the rectangle
+    this.y = y; // the middle of the rectangle
+    this.w = w; // the width from side to side
+    this.h = h; // the height, top to bottom. e.g. not half.
+    this.left = x - w;
+    this.right = x + w;
+    this.top = y - h;
+    this.bottom = y + h;
+  }
+  // the train used rectangles where the width and height are half of the width and height of the rectangle.
+  intersects(range) {
+    return !(this.right < range.left ||
+      this.left > range.right ||
+      this.top > range.bottom ||
+      this.bottom  < range.top
+    )
+
   }
 }
 let DEFAULT_CAPACITY = 4;
@@ -72,21 +85,50 @@ class QuadTree {
       else console.log("Error: p is not within any boundary");
     }
   }
-  query(range){
-    let found = [];
-    if(!this.isDivided){
-      found = found.concat(this.points);
+  within(p) {
+    if (p.x < this.boundary.x + this.boundary.w && p.x > this.boundary.x - this.boundary.w &&
+      p.y < this.boundary.y + this.boundary.h && p.y > this.boundary.y - this.boundary.h) {
+      return true;
+    }
+    return false;
+  }
+  queryTrees(range, found) {
+
+    if (this.boundary.intersects(range)) {
+      found.push(this);
+    } else return;
+
+    if (!this.isDivided) {
     } else {
-      let sections = [this.nw,this.ne,this.se,this.sw];
+      let sections = [this.nw, this.ne, this.se, this.sw];
       sections.forEach(quad => {
-        let points = quad.query(range);
-        points.forEach(p=>{
-          found.push(p);
-        })
+        quad.queryTrees(range, found);
       });
     }
-    return found;
   }
+  // query(range){
+  //   let found = [];
+  //   if(!this.isDivided){
+  //     this.points.forEach(p=>{
+  //       found.push(p);
+  //     });
+  //   } else {
+  //     let sections = [this.nw,this.ne,this.se,this.sw];
+  //     sections.forEach(quad => {
+  //       if(this.boundary.intersects(range,quad)){
+  //         let points = quad.query(range);
+  //         points.forEach(p=>{
+  //           found.push(p);
+  //         })
+
+  //       }
+  //     });
+  //   }
+  //   return found;
+  // }
 
 
+}
+if (typeof module !== "undefined") {
+  module.exports = { Point, Rectangle, QuadTree };
 }
