@@ -5,6 +5,7 @@
   "main": "quadtree.js",
   "scripts": {
     "test": "mocha",
+    "build": "esbuild quadtree.js sketch.js --bundle --minify --outdir=dist",
     "test-watch": "mocha --watch"
   },
   "keywords": [
@@ -19,6 +20,7 @@
     "sinon": "^4.4.9"
   },
   "dependencies": {
+    "esbuild": "^0.21.1",
     "yarn": "^1.22.22"
   }
 }
