@@ -8,6 +8,9 @@
 
 	<title>QuadTree</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script src="showdown.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
 	<script src="quadtree.js"></script>
 	<script src="sketch.js"></script>
@@ -18,15 +21,18 @@
 <body>
 	<div id="myCanvas" style="touch-action: none;"></div>
 	<div id="myContainer"></div>
-	<script>var converter = new showdown.Converter();
+	<script>
+
+	    var converter = new showdown.Converter();
 		// Fetch the README.md content 
 		const readmeUrl = 'readme.md';
 
 		fetch(readmeUrl)
 			.then(response => response.text())
 			.then(markdownContent => {
+
 				// Convert the Markdown content to HTML using Showdown
-				const converter = new showdown.Converter();
+				const converter = new showdown.Converter( { extensions: ['codehighlight']} );
 				const htmlContent = converter.makeHtml(markdownContent);
 
 				// Now you can use the HTML content (e.g., append it to a container)
