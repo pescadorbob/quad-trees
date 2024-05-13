@@ -68,4 +68,6 @@ In this solution, I leveraged a quadtree data structure to efficiently search fo
 
 My solution combines efficient point search, interactive query range adjustment, and informative visualization. It's a powerful tool for spatial data analysis and can be adapted for various applications.
 
-Feel free to explore specific implementation details, code snippets, or any other aspects you'd like to cover. If you have further questions or need additional guidance, feel free to ask! 🌳🔍
+## References
+
+Feel free to explore the specific implementation details, code snippets, or any other aspects of the project [here](https://github.com/pescadorbob/quad-trees). If you have further questions or desire additional conversation, feel free to ask! 🌳🔍
