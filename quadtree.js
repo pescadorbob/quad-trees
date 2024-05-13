@@ -13,14 +13,13 @@ class Rectangle {
   constructor(x, y, w, h) {
     this.x = x; // the middle of the rectangle
     this.y = y; // the middle of the rectangle
-    this.w = w; // the width from side to side
-    this.h = h; // the height, top to bottom. e.g. not half.
+    this.w = w; // the width from middle to side
+    this.h = h; // the height, middle to top or bottom.
     this.left = x - w;
     this.right = x + w;
     this.top = y - h;
     this.bottom = y + h;
   }
-  // the train used rectangles where the width and height are half of the width and height of the rectangle.
   intersects(range) {
     return !(this.right < range.left ||
       this.left > range.right ||
@@ -112,26 +111,6 @@ class QuadTree {
       });
     }
   }
-  // query(range){
-  //   let found = [];
-  //   if(!this.isDivided){
-  //     this.points.forEach(p=>{
-  //       found.push(p);
-  //     });
-  //   } else {
-  //     let sections = [this.nw,this.ne,this.se,this.sw];
-  //     sections.forEach(quad => {
-  //       if(this.boundary.intersects(range,quad)){
-  //         let points = quad.query(range);
-  //         points.forEach(p=>{
-  //           found.push(p);
-  //         })
-
-  //       }
-  //     });
-  //   }
-  //   return found;
-  // }
 
 
 }

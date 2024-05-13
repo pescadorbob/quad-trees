@@ -51,7 +51,6 @@ function highlightIntersections(range){
     stroke(150,150,0);
     rectMode(CENTER);
     noFill();
-    // the train guy used width and height that are half. 
     rect(r.x,r.y,2*r.w,2*r.h);
   }
 

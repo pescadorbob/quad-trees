@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "esbuild": "^0.21.1",
+    "highlightjs": "^9.16.2",
     "yarn": "^1.22.22"
   }
 }
