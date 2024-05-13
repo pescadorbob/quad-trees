@@ -2,7 +2,15 @@
 
 ## Overview
 
-In this solution, I leveraged a quadtree data structure to efficiently search for points within a specified rectangular query region. The quadtree allows us to organize points spatially and optimize point retrieval. Here's how I tackled it:
+In this solution, I leveraged a quadtree data structure to efficiently search for points within a specified rectangular query region. The quadtree allows us to organize points spatially and optimize point retrieval. [Click here for the interactive demo:](https://pescadorbob.github.io/quad-trees/) See **Figure 1**
+
+
+![Interactive Demo](image.png)
+
+**Figure 1**
+
+
+Here's how I tackled it:
 
 ## 1. Quadtree Construction
 
