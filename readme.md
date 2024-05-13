@@ -220,6 +220,11 @@ Here's how I tackled it:
 
 My solution combines efficient point search, interactive query range adjustment, and informative visualization. It's a powerful tool for spatial data analysis and can be adapted for various applications.
 
-## References
 
 Feel free to explore the specific implementation details, code snippets, or any other aspects of the project [here](https://github.com/pescadorbob/quad-trees). If you have further questions or desire additional conversation, feel free to ask! 🌳🔍
+
+## References
+
+- This GitHub Repo: https://github.com/pescadorbob/quad-trees
+- P5js: https://p5js.org/
+- TheCodingTrain: https://thecodingtrain.com/challenges/98-quadtree
